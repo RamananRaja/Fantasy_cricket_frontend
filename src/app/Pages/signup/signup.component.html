@@ -1,0 +1,69 @@
+<div class="centered-content">
+    <div class="signup-box has-background-light">
+      <h1 class="title has-text-primary">SignUp</h1>
+      
+        <!--FIRST NAME-->  
+        <div class="field">
+        <p class="control has-icons-left has-icons-right">
+            <input #firstNameInput class="input" type="text" placeholder="First Name">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </p>
+        </div>
+        <!--LAST NAME--> 
+        <div class="field">
+        <p class="control has-icons-left has-icons-right">
+            <input #lastNameInput class="input" type="text" placeholder="Last Name">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </p>
+        </div>
+        <!--AGE-->  
+        <div class="field">
+            <p class="control has-icons-left has-icons-right">
+            <input #ageInput class="input" type="number" placeholder="Age">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </p>
+        </div>
+        <!--USER NAME--> 
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+              <input #userNameInput class="input" type="text" placeholder="User Name">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </p>
+          </div>
+        <!--E-Mail-->  
+        <div class="field">
+            <p class="control has-icons-left has-icons-right">
+            <input #emailInput class="input" type="email" placeholder="Email">
+            <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+            </span>
+            </p>
+        </div>
+      <!--PASSWORD-->
+      <div class="field">
+        <p class="control has-icons-left">
+          <input #passwordInput class="input" type="password" placeholder="Password">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <!--SIGNUP BUTON-->
+      <div class="field is-pulled-right">
+        <p class="control">
+          <button class="button is-success" (click)="onSignupButtonClicked(firstNameInput.value, lastNameInput.value, ageInput.value, userNameInput.value, emailInput.value, passwordInput.value)">
+            SignUp
+          </button>
+        </p>
+      </div>
+      <p>Already have an Account <a class="has-text-primary" routerLink="/login">Click Here</a> </p>
+    </div>
+  </div>

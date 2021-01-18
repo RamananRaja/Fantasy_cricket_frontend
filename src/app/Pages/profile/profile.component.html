@@ -1,0 +1,33 @@
+<div class="centered-content">
+    <div class="my-profile-container">
+        <!--Header content-->
+        <div class="header-content">
+            <a class="title is-5" style="padding-top: 6px;" routerLink="/matchcontest">Contest</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="title is-5" style="padding-top: 6px;" routerLink="/mycontest">My contest</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="title is-5" style="padding-top: 6px;" routerLink="/leaderboard">LeaderBoard</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h1 class="title has-text-primary">My Profile</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="title is-5" style="padding-top: 6px;" (click)="logout()">LogOut</a>
+        </div>
+
+        <div>
+            <p style="font-size: 15pt;">
+                <b style="margin-left: 10%;">Name</b>
+                <b style="margin-left: 40%;">{{ this.firstName }} {{ this.lastName }}</b>
+            </p><br>
+
+            <p style="font-size: 15pt;">
+                <b style="margin-left: 10%;">User Name</b>
+                <b style="margin-left: 35%;">{{ this.userName }}</b>
+            </p><br>
+            <p style="font-size: 15pt;">
+                <b style="margin-left: 10%;">Age</b>
+                <b style="margin-left: 42%;">{{ this.age }}</b>
+            </p><br>
+            <p style="font-size: 15pt;">
+                <b style="margin-left: 10%;">E-mail</b>
+                <b style="margin-left: 40%;">{{ email }}</b>
+            </p>
+        </div>
+        
+    </div>
+</div>

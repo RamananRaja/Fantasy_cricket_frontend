@@ -1,0 +1,54 @@
+<div class="centered-content">
+    <div class="task-manager-container">
+        <!--Display teams-->
+        <div class="leftbar">
+            <h1 class="title has-text-primary">
+                team
+            </h1>
+            <div class="list-menu">
+                <div #team1 class="list-menu-item">
+                    <p><b>
+                        {{ selectedTeam['team-1']}}
+                    </b></p>
+                    <b>VS</b>
+                    <p style="padding-left: 10px;"><b>
+                        {{ selectedTeam['team-2']}}
+                    </b></p>
+                </div>
+                <div>
+                    <button  class="button is-primary has-text-white" (click)="onCreateTeamClicked()"> 
+                        Create my team
+                    </button>
+                </div>
+                <p *ngIf="this.selected_players">{{this.selected_players.length}} players selected</p>
+                <div class="list-menu" *ngFor="let item of selected_players" style="overflow: hidden;">
+                    <p>
+                        {{ item.name }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Display Players--> 
+        <div class="rightbar">
+            <h1 class="title has-text-primary">
+                Players
+            </h1>
+            
+            <div *ngIf="selectedSquad_0 == null">
+                <b>Player list not yet updated. Please try joining another contest</b>
+            </div>
+            <!--display team 0 squad-->
+            <div *ngIf="team1 is-active">
+                <div class="task" *ngFor="let player of selectedSquad_0"  (click)="onPlayerClicked(player)" >
+                    <p>{{ player['name'] }}</p>
+                </div>
+            </div>
+            <!--display team 1 squad-->
+            <div class="task" *ngFor="let player of selectedSquad_1" (click)="onPlayerClicked(player)" >
+                <p>{{ player['name'] }}</p>
+            </div>
+        </div>
+        
+    </div>
+
+</div>

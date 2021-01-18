@@ -1,0 +1,37 @@
+<div class="centered-content">
+    <div class="contest-container">
+        <!--Header content-->
+        <div class="header-content">
+            <h1 class="title has-text-primary">Contest</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="title is-5" style="padding-top: 6px;" routerLink="/mycontest">My contest</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="title is-5" style="padding-top: 6px;" routerLink="/leaderboard">LeaderBoard</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="title is-5" style="padding-top: 6px;" routerLink="/profile">My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="title is-5" style="padding-top: 6px;" (click)="logout()">LogOut</a>
+        </div>
+        
+        <!--contest from API-->
+        <div style="overflow: scroll;">
+            <div *ngFor="let match of available_Matches"  style="padding-bottom: 15px;">
+            <nav class="level">
+                <!-- Left side -->
+                <div class="level-left">
+                    <div class="level-item">
+                        <p class="subtitle is-5">
+                            <strong>
+                                    <b> {{ match['team-1'] }} VS {{ match['team-2'] }} </b> 
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right side -->
+                <div class="level-right">
+                    <p class="level-item"><b>{{ match['dateTimeGMT'] }}</b></p>
+                    <p class="level-item"><a class="button is-success" (click)="onJoinContestClicked(match)" >Join Contest</a></p>
+                </div>
+            </nav>
+            </div>
+        </div>
+        
+    </div>
+</div>

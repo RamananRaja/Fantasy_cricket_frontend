@@ -1,0 +1,59 @@
+<div class="centered-content">
+    <div class="leaderboard-container">
+        <!--Header content-->
+        <div class="header-content">
+            <a class="title is-5" style="padding-top: 6px;" routerLink="/matchcontest">Contest</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="title is-5" style="padding-top: 6px;" routerLink="/mycontest">My contest</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h1 class="title has-text-primary">LeaderBoard</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="title is-5" style="padding-top: 6px;" routerLink="/profile">My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="title is-5" style="padding-top: 6px;" (click)="logout()">LogOut</a>
+        </div>
+        <!--Selct match from dropDown list-->
+        <select #selectIn (change)="onSelectClicked(selectIn.value)" class="input">
+            <option></option>
+            <option value="{{item.contestId}}" *ngFor = "let item of this.joinedContest" >
+                {{ item.team_1 }} VS {{ item.team_2 }}
+            </option>
+        </select>
+        <br>
+        
+        <!--Topic-->
+        <nav class="level" style="margin-left: 5%;">
+            <!-- Left side -->
+            <div class="level-left">
+                <div class="level-item">
+                    <p class="subtitle is-5">
+                        <strong>Name</strong>
+                    </p>
+                </div>
+            </div>
+      
+            <!-- Right side -->
+            <div class="level-right">
+                <p class="level-item">
+                    <strong> Credit</strong>
+                </p>
+            </div>
+        </nav>
+
+        <!-- LeaderBoard 1 -->
+        <nav class="level" style="margin-left: 5%;" *ngFor = "let user of this.usersInMatch">
+            <!-- Left side -->
+            <div class="level-left">
+                <div class="level-item">
+                    <p class="subtitle is-5">
+                        <strong>{{ user['userName'] }}</strong>
+                    </p>
+                </div>
+            </div>
+  
+            <!-- Right side -->
+            <div class="level-right">
+                <p class="level-item">{{ user['totalCredit'] }}</p>
+            </div>
+        </nav>
+
+        
+  
+    </div>
+</div>

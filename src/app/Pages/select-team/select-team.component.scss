@@ -1,0 +1,120 @@
+@import '../../../main-styles.scss';
+
+
+//Used in main-style.css
+/*
+.centered-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}*/
+
+.task-manager-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 680px;
+}
+
+.leftbar{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: white;
+    padding: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.rightbar{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: scroll;
+    width: 750px;
+    background-color: rgb(222, 230, 233);
+    padding: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.task-list-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.list-menu{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    //flex-grow: 1;
+    .list-menu-item{
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border-radius: 5px;
+        width: 100%;
+        color: #5f5f5f;
+        margin-bottom: 5px;
+
+        &:hover {
+            background:rgb(44, 224, 170);
+        }
+
+        &.is-active {
+            background-color: rgb(13, 172, 158);
+            color: $dark-green;
+        }
+    }
+}
+
+.task{
+    background: white;
+    padding: 15px 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+
+    &.is-active {
+        text-decoration: line-through;
+        opacity: 50%;
+    }
+
+    &:not(.complete){
+        cursor: pointer;
+        transition: box-shadow 0.35s ease, transform 0.2s ease;
+
+        &:active{
+            transform: scale(0.95);
+        }
+
+        &:hover{
+            box-shadow: 0 0 0 5px #e00000;
+        }
+    }
+
+    &.completed{
+        text-decoration: line-through;
+        opacity: 50%;
+    }
+}
+
+.circle-add-button {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    bottom: 25px;
+    right: 25px;
+    border-radius: 50%;
+}
+
+.empty-state-text {
+    font-size: 20px;
+    color: #777;
+    text-align: center;
+}
